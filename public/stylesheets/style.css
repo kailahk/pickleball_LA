@@ -1,42 +1,59 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 3vmin 5vmin 0vmin 5vmin;
+  font-family: 'Roboto', sans-serif;
+  display: grid;
+  text-align: center;
+  grid-template-rows: 20vmin 100vmin;
+  grid-template-areas: 
+    "nav"
+    "main"
 }
 
 a {
-  color: #00B7FF;
-}
-
-.login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 34px;
+  color: #435F3F;
 }
 
 .login img {
   height: 30px;
+  margin-top: 0.5vmin
+}
+
+.logout > img {
+  height: 6vmin;
+  width: 6vmin;
+}
+
+.logout > p {
+  margin: 0.5vmin 0;
+  font-size: 3vmin;
 }
 
 .logout {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  margin-top: -5vmin;
 }
 
-.logout > img {
-  height: 10vmin;
-  width: 10vmin;
-}
-
-.logout > p {
-  margin: 1vmin 0;
-}
-
-.loginLink {
+nav {
+  background-color: #A8C49B;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  margin-top: -7vmin;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 3vmin;
+  font-size: 4vmin;
+}
+
+.courtImg {
+  height: 80vh;
+}
+
+main {
+  background-color: #A8C49B;
+}
+
+h2 {
+  padding: 0 28vmin 3vmin 28vmin;
+  line-height: 5vmin;
+  color: white;
+  font-size: 4vmin;
 }

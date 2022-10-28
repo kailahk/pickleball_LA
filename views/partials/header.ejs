@@ -5,26 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pickleball_LA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
 <nav>
-    <a href="/" <%- title === 'Home Page' ? 'class="active"' : '' %>>Home Page</a>
     <% if (user) { %>
-      <a href=""    <%- title === 'Courts' ? 'class="active"' : '' %>>
-          Courts</a>
-      <a href="" <%- title === 'Reservations' ? 'class="active"' : '' %>>Reservations</a>
-      <div class="logout">
-        <a href="/logout">LOG OUT: </a>
-        <p><%- user.name %></p>
-        <img src="<%- user.avatar %>" alt="avatar" referrerpolicy="no-referrer">
-      </div>
-    <% } else { %>
-      <div class="loginLink">
-        <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
-    <% } %>
-      </div>
+        <div class="mainNav">
+        <a href="/" <%- title === 'Home Page' ? 'class="active"' : '' %>>Home Page | </a>
+            <a href=""    <%- title === 'Courts' ? 'class="active"' : '' %>>
+                Courts | </a>
+            <a href="" <%- title === 'Reservations' ? 'class="active"' : '' %>>Reservations</a>
+    </div>
+    <div class="rightNav">
+        <div class="logout">
+            <a href="/logout">LOG OUT: </a>
+            <p><%- user.name %></p>
+            <img src="<%- user.avatar %>" alt="avatar" referrerpolicy="no-referrer">
+        </div>
+    </div class="initView">
+        <% } else { %>
+            <a href="/" <%- title === 'Home Page' ? 'class="active"' : '' %>>Home Page</a>
+            <a href="/auth/google" class="login">LOG IN:<br><img src="https://i.imgur.com/FHjYyi0.png"></a>
+        <% } %>
   </nav>
   <main>
-    <h1><%= title %></h1>
     
