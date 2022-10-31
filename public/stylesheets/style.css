@@ -15,7 +15,7 @@ a {
 
 .login img {
   height: 30px;
-  margin-top: 0.5vmin
+  margin-top: -3vmin
 }
 
 .logout > img {
@@ -24,7 +24,7 @@ a {
 }
 
 .logout > p {
-  margin: 0.5vmin 0;
+  margin: -1vmin 0 0 0;
   font-size: 3vmin;
 }
 
@@ -56,4 +56,8 @@ h2 {
   line-height: 5vmin;
   color: white;
   font-size: 4vmin;
+}
+
+table, th, tr, tbody {
+  border: 0.5vmin solid #435F3F
 }
