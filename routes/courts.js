@@ -7,5 +7,7 @@ const ensureLoggedIn = require('../config/ensureLoggedIn');
 
 /* GET users listing. */
 router.get('/', ensureLoggedIn, courtsCtrl.index);
+// GET /courts/:id
+router.get('/:id', ensureLoggedIn, courtsCtrl.show);
 
 module.exports = router;

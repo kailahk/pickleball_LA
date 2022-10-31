@@ -1,0 +1,40 @@
+<%- include('../partials/header') %>
+
+<h2>Reservations</h2>
+
+<% if (reservations.length) { %>
+    <table>
+        <thead>
+          <tr>
+            <th>Court</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% reservations.forEach(function(r) { %>
+            <tr>
+              <td><%= r.court.court %> - <%= r.court.location %></td>
+              <td><%= r.date %></td>
+              <td><%= r.time %></td>
+              <td>
+                <% if (user?._id.equals(r.user)) { %>
+                  <form action="/reservations/<%= r._id %>?_method=DELETE" method="POST">
+                    <button type="submit">x</button>
+                  </form>
+                <% } %>
+              </td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+  <% } else { %>
+    <h5>No Reservations Yet</h5>
+  <% } %>
+  <br><br>
+  <a href="/reservations/new">Add New Reservation</a>
+  </input>
+  <br><br>
+
+<%- include('../partials/footer') %>

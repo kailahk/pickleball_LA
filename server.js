@@ -9,6 +9,8 @@ const passport = require('passport');
 
 var indexRouter = require('./routes/index');
 var courtsRouter = require('./routes/courts');
+var reviewsRouter = require('./routes/reviews');
+var reservationsRouter = require('./routes/reservations');
 
 require('dotenv').config();
 require('./config/database.js');
@@ -42,6 +44,8 @@ app.use(function(req, res, next) {
 
 app.use('/', indexRouter);
 app.use('/courts', courtsRouter);
+app.use('/', reviewsRouter);
+app.use('/', reservationsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

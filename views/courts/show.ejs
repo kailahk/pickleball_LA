@@ -1,0 +1,53 @@
+<%- include('../partials/header') %>
+
+<section id="show-page">
+    <h1>Details</h1><br>
+    <div>Court:</div>
+    <div><%= court.court %></div>
+    <div>Location:</div>
+    <div><%= court.location %></div>
+    <br><br>
+    <div>Reviews</div>
+    <% if (user) { %>
+        <form id="add-review-form" method="POST"
+        action="/courts/<%= court._id %>/reviews">
+            <textarea name="content"></textarea>
+            <input type="submit" value="Add Review">
+        </form>
+    <% } %>
+
+    <% if (court.reviews.length) { %>
+        <table>
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>Date</th>
+              <th>Review</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% let total = 0 %>
+            <% court.reviews.forEach(function(r) { %>
+              <% total += r.rating %>
+              <tr>
+                <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer"> <%= r.userName %></td>
+                <td><%= r.createdAt.toLocaleDateString() %></td>
+                <td><%= r.content %></td>
+                <td>
+                  <% if (user?._id.equals(r.user)) { %>
+                    <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+                      <button type="submit">x</button>
+                    </form>
+                  <% } %>
+                </td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+    <% } else { %>
+    <h5>No Reviews Yet</h5>
+</section>
+    <% } %>
+
+<%- include('../partials/footer') %>

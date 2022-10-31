@@ -1,6 +1,7 @@
 body {
   padding: 3vmin 5vmin 0vmin 5vmin;
   font-family: 'Roboto', sans-serif;
+  color: #435F3F;
   display: grid;
   text-align: center;
   grid-template-rows: 20vmin 100vmin;
@@ -58,6 +59,17 @@ h2 {
   font-size: 4vmin;
 }
 
-table, th, tr, tbody {
-  border: 0.5vmin solid #435F3F
+table, tr, tbody, td {
+  border: 0.25vmin solid #435F3F;
+  margin: 3vmin auto 0 auto;
+  padding: 1.5vmin;
+}
+
+th {
+  border: 0.5vmin solid #435F3F;
+  padding: 1vmin;
+}
+
+thead {
+  background-color: #A1BBE8;
 }
