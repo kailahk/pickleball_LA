@@ -14,8 +14,7 @@ const reservationSchema = new Schema({
     date: {
         type: Date,
         default: function() {
-            let dateCreated = new Date().getDate();
-            dateCreated.setHours(0,0,0,0);
+            let dateCreated = new Date().getFullYear().getMonth().getDate();
             return dateCreated++;
         }
     },

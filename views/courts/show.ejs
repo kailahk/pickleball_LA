@@ -23,7 +23,7 @@
               <th>User</th>
               <th>Date</th>
               <th>Review</th>
-              <th>Delete</th>
+              <th>Edit/Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -36,8 +36,9 @@
                 <td><%= r.content %></td>
                 <td>
                   <% if (user?._id.equals(r.user)) { %>
+                    <a href="/reviews/<%= r._id %>/edit">Edit</a>
                     <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
-                      <button type="submit">x</button>
+                      <button type="submit">Delete</button>
                     </form>
                   <% } %>
                 </td>

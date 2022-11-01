@@ -16,7 +16,10 @@
           <% reservations.forEach(function(r) { %>
             <tr>
               <td><%= r.court.court %> - <%= r.court.location %></td>
-              <td><%= r.date %></td>
+              <td><% let date = r.date %>
+                  <% let dateStrg = date.toDateString() %>
+                  <%= dateStrg %>
+              </td>
               <td><%= r.time %></td>
               <td>
                 <% if (user?._id.equals(r.user)) { %>

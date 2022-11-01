@@ -15,7 +15,7 @@ const reviewSchema = new Schema({
     userAvatar: String
   }, {
     timestamps: true
-  });
+  })
 
 const courtSchema = new Schema({
     court: String,

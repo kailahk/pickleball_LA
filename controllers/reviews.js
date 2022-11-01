@@ -2,7 +2,9 @@ const Court = require('../models/court');
 
 module.exports = {
     create,
-    delete: deleteReview
+    delete: deleteReview,
+    edit,
+    update
   };
 
 function create(req, res) {
@@ -29,6 +31,24 @@ function deleteReview(req, res, next) {
         res.redirect(`/courts/${court._id}`);
       }).catch(function(err) {
         return next(err);
+      });
+    });
+  }
+
+function edit(req, res) {
+Court.findOne({'reviews._id': req.params.id}, function(err, court) {
+    const review = court.reviews.id(req.params.id);
+    res.render('reviews/edit', {title: 'Edit Review', review, court});
+});
+}
+
+function update(req, res) {
+    Court.findOne({'reviews._id': req.params.id}, function(err, court) {
+      const reviewSubDoc = court.reviews.id(req.params.id);
+      if (!reviewSubDoc.user.equals(req.user._id)) return res.redirect(`/courts/${court._id}`);
+      reviewSubDoc.content = req.body.content;
+      court.save(function(err) {
+        res.redirect(`/courts/${court._id}`);
       });
     });
   }

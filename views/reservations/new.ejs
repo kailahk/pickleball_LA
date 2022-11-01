@@ -12,14 +12,13 @@
   </label>
   <br><br>
   <label>Date & Time:
-    <input type="date" name="date">
-    <select type="text" name="time">
-        <option value="9:00am - 10:30am PT">9:00am - 10:30am PT</option>
-        <option value="10:30am - 12:00pm PT">10:30am - 12:00pm PT</option>
-        <option value="12:00pm - 1:30pm PT">12:00pm - 1:30pm PT</option>
-        <option value="1:30pm - 3:00pm PT">1:30pm - 3:00pm PT</option>
-        <option value="3:00pm - 4:30pm PT">3:00pm - 4:30pm PT</option>
-        <option value="4:30pm - 6:00pm PT">4:30pm - 6:00pm PT</option>
+    <input type="date" name="date" min="<%= new Date().toJSON().slice(0,10) %>">
+    <select name="time">
+        <% validInputs.forEach(function(time, idx) { %>
+            <option value="<%= time %>" <%= idx === 0 ? 'selected' : ''%>>
+                <%= time %>
+            </option>
+          <% }) %>
     </select>
   </label><br><br>
   <input type="submit" value="Add Reservation">
