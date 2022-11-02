@@ -25,9 +25,7 @@
             </tr>
           </thead>
           <tbody>
-            <% let total = 0 %>
             <% court.reviews.forEach(function(r) { %>
-              <% total += r.rating %>
               <tr>
                 <td><%= r.content %></td>
                 <td class="review-user"><img class="avatarImg" alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer"><br><br> posted by <%= r.userName %><br> on <%= r.createdAt.toLocaleDateString() %></td>

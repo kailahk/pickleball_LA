@@ -5,14 +5,13 @@ module.exports = {
     delete: deleteReview,
     edit,
     update
-  };
+};
 
 function create(req, res) {
     Court.findById(req.params.id, function(err, court) {
         req.body.user = req.user._id;
         req.body.userName = req.user.name;
         req.body.userAvatar = req.user.avatar;
-
         court.reviews.push(req.body);
         court.save(function(err) {
             res.redirect(`/courts/${court._id}`)
@@ -22,18 +21,18 @@ function create(req, res) {
 
 function deleteReview(req, res, next) {
     Court.findOne({
-      'reviews._id': req.params.id,
-      'reviews.user': req.user._id
+        'reviews._id': req.params.id,
+        'reviews.user': req.user._id
     }).then(function(court) {
-      if (!court) return res.redirect('/courts');
-      court.reviews.remove(req.params.id);
-      court.save().then(function() {
-        res.redirect(`/courts/${court._id}`);
-      }).catch(function(err) {
-        return next(err);
-      });
+        if (!court) return res.redirect('/courts');
+        court.reviews.remove(req.params.id);
+        court.save().then(function() {
+            res.redirect(`/courts/${court._id}`);
+        }).catch(function(err) {
+            return next(err);
+        });
     });
-  }
+}
 
 function edit(req, res) {
 Court.findOne({'reviews._id': req.params.id}, function(err, court) {
@@ -51,4 +50,4 @@ function update(req, res) {
         res.redirect(`/courts/${court._id}`);
       });
     });
-  }
+}

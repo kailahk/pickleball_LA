@@ -5,7 +5,6 @@ const ensureLoggedIn = require('../config/ensureLoggedIn');
 
 // All routes start with '/courts'
 
-/* GET users listing. */
 router.get('/', ensureLoggedIn, courtsCtrl.index);
 // GET /courts/:id
 router.get('/:id', ensureLoggedIn, courtsCtrl.show);

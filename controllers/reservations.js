@@ -24,16 +24,15 @@ function create(req, res) {
 }
 
 function index(req, res) {
-    Reservation.find({}).populate('court').exec( function(err, reservations) {
-      res.render('reservations/index', { title: 'All Reservations', reservations });
+    Reservation.find({user: req.user._id}).populate('court').exec( function(err, reservations) {
+        res.render('reservations/index', { title: 'All Reservations', reservations });
     });
 }
 
 function deleteReservation(req, res, next) {
-    Reservation.findById(req.params.id)
-    .then(function(reservation) {
-        if (!reservation) return res.redirect('/reservations/index')
-        reservation.remove(req.params.id)
+    Reservation.findOneAndDelete(
+        {_id: req.params.id, user: req.user._id}
+    ).then(function() {
         res.redirect('/reservations/index')
     }).catch (function(err) {
         return next(err);
