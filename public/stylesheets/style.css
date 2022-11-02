@@ -52,6 +52,7 @@ h2 {
   line-height: 5.25vmin;
   color: white;
   font-size: 5vmin;
+  padding: 0 30vmin 0 30vmin;
 }
 
 h3 {
@@ -78,7 +79,7 @@ thead {
 }
 
 header {
-  height: 600px;
+  height: 650px;
   width: 100%;
   text-align: center;
   padding-top: 125px;
