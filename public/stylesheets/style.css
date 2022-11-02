@@ -4,7 +4,7 @@ body {
   color: #435F3F;
   display: grid;
   text-align: center;
-  grid-template-rows: 20vmin 100vmin;
+  grid-template-rows: 20vmin 80vmin;
   grid-template-areas: 
     "nav"
     "main"
@@ -79,7 +79,7 @@ thead {
 }
 
 header {
-  height: 650px;
+  height: 770px;
   width: 100%;
   text-align: center;
   padding-top: 125px;
@@ -116,7 +116,7 @@ header {
   margin-top: 6vmin;
 }
 
-#addReviewBtn, #deleteRev, #updateRevBtn {
+#addReviewBtn, #deleteRev, #updateRevBtn, #addResBtn {
   height: 4vmin;
   border-radius: 2vmin;
   margin-top: 3vmin;

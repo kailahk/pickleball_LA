@@ -16,7 +16,8 @@ const reservationSchema = new Schema({
         default: function() {
             let dateCreated = new Date().getFullYear().getMonth().getDate();
             return dateCreated++;
-        }
+        },
+        required: true
     },
     time: {
         type: String,
