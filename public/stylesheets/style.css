@@ -1,5 +1,5 @@
 body {
-  padding: 3vmin 5vmin 0vmin 5vmin;
+
   font-family: 'Roboto', sans-serif;
   color: #435F3F;
   display: grid;
@@ -40,7 +40,7 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 3vmin;
+  padding: 3vmin 3vmin 0 3vmin;
   font-size: 4vmin;
 }
 
@@ -48,15 +48,14 @@ nav {
   height: 80vh;
 }
 
-main {
-  background-color: #A8C49B;
+h2 {
+  line-height: 5.25vmin;
+  color: white;
+  font-size: 5vmin;
 }
 
-h2 {
-  padding: 0 28vmin 3vmin 28vmin;
-  line-height: 5vmin;
-  color: white;
-  font-size: 4vmin;
+h3 {
+  font-size: 5vmin;
 }
 
 table, tr, tbody, td {
@@ -66,10 +65,72 @@ table, tr, tbody, td {
 }
 
 th {
-  border: 0.5vmin solid #435F3F;
+  border: 0.25vmin solid #435F3F;
   padding: 1vmin;
 }
 
 thead {
   background-color: #A1BBE8;
+}
+
+.logo {
+  height: 10vmin;
+}
+
+header {
+  height: 600px;
+  width: 100%;
+  text-align: center;
+  padding-top: 125px;
+  color: white;
+  overflow: hidden;
+  background: #A1BBE8;  /* fallback for old browsers */
+  background: linear-gradient(rgb(169,196,155,0.8), rgb(161,187,232,0.8)), url("https://i.imgur.com/74mNwIa.jpg");  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(rgb(168, 196, 155,0.8), rgb(161,187,232,0.8)), url("https://i.imgur.com/74mNwIa.jpg"); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#logoImgLandingPage {
+  height: 20vmin;
+  width: 20vmin;
+  opacity: 0.8;
+}
+
+.strong {
+  font-size: 4vmin;
+}
+
+.underlined {
+  text-decoration: underline solid;
+}
+
+#add-review-form, #edit-review-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#edit-review-form {
+  margin-top: 6vmin;
+}
+
+#addReviewBtn, #deleteRev, #updateRevBtn {
+  height: 4vmin;
+  border-radius: 2vmin;
+  margin-top: 3vmin;
+}
+
+#deleteRes {
+  height: 4vmin;
+  border-radius: 2vmin;
+}
+
+.avatarImg {
+  height: 6vmin;
+  width: 6vmin;
+}
+
+.review-user {
+  font-size: 1.25vmin;
 }

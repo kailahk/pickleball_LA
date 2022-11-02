@@ -13,6 +13,7 @@
   <br><br>
   <label>Date & Time:
     <input type="date" name="date" min="<%= new Date().toJSON().slice(0,10) %>">
+    &nbsp;&nbsp;
     <select name="time">
         <% validInputs.forEach(function(time, idx) { %>
             <option value="<%= time %>" <%= idx === 0 ? 'selected' : ''%>>

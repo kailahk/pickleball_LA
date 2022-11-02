@@ -6,10 +6,10 @@
     <table>
         <thead>
           <tr>
-            <th>Court</th>
-            <th>Date</th>
-            <th>Time</th>
-            <th>Delete</th>
+            <th><h3>Court</h3></th>
+            <th><h3>Date</h3></th>
+            <th><h3>Time</h3></th>
+            <th><h3>Delete</h3></th>
           </tr>
         </thead>
         <tbody>
@@ -24,7 +24,7 @@
               <td>
                 <% if (user?._id.equals(r.user)) { %>
                   <form action="/reservations/<%= r._id %>?_method=DELETE" method="POST">
-                    <button type="submit">x</button>
+                    <button id="deleteRes" type="submit">Delete</button>
                   </form>
                 <% } %>
               </td>

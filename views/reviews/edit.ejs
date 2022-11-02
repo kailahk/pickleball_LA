@@ -3,8 +3,8 @@
     <% if (user) { %>
         <form id="edit-review-form" method="POST"
         action="/reviews/<%= review._id %>?_method=PUT">
-            <textarea name="content"><%= review.content %></textarea>
-            <input type="submit" value="Update Review">
+            <textarea id="" name="content"><%= review.content %></textarea>&nbsp;&nbsp;&nbsp;
+            <input id="updateRevBtn" type="submit" value="Update Review">
         </form>
     <% } %>
 

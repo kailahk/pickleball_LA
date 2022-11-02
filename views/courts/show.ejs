@@ -1,28 +1,26 @@
 <%- include('../partials/header') %>
 
 <section id="show-page">
-    <h1>Details</h1><br>
-    <div>Court:</div>
-    <div><%= court.court %></div>
-    <div>Location:</div>
-    <div><%= court.location %></div>
+    <br>
+    <h3><span class="underlined">Court Details</span></h3><br>
+    <div><span class="strong">Court:&nbsp; </span> <%= court.court %></div>
+    <div><span class="strong">Location:&nbsp; </span> <%= court.location %></div>
     <br><br>
-    <div>Reviews</div>
     <% if (user) { %>
         <form id="add-review-form" method="POST"
         action="/courts/<%= court._id %>/reviews">
             <textarea name="content"></textarea>
-            <input type="submit" value="Add Review">
+            &nbsp;&nbsp;&nbsp;
+            <input type="submit" value="Add Review" id="addReviewBtn">
         </form>
+        <br>
     <% } %>
-
     <% if (court.reviews.length) { %>
         <table>
           <thead>
             <tr>
-              <th>User</th>
-              <th>Date</th>
               <th>Review</th>
+              <th>User</th>
               <th>Edit/Delete</th>
             </tr>
           </thead>
@@ -31,14 +29,13 @@
             <% court.reviews.forEach(function(r) { %>
               <% total += r.rating %>
               <tr>
-                <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer"> <%= r.userName %></td>
-                <td><%= r.createdAt.toLocaleDateString() %></td>
                 <td><%= r.content %></td>
+                <td class="review-user"><img class="avatarImg" alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer"><br><br> posted by <%= r.userName %><br> on <%= r.createdAt.toLocaleDateString() %></td>
                 <td>
                   <% if (user?._id.equals(r.user)) { %>
                     <a href="/reviews/<%= r._id %>/edit">Edit</a>
                     <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
-                      <button type="submit">Delete</button>
+                      <button type="submit" id="deleteRev">Delete</button>
                     </form>
                   <% } %>
                 </td>
