@@ -1,32 +1,35 @@
 <%- include('../partials/header') %>
-
-  <table id="list">
-    <thead>
-      <tr>
-        <th>
-          <h3>Court</h3>
-        </th>
-        <th>
-          <h3>Location</h3>
-        </th>
-        <th>
-          <h3>Details</h3>
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <% courts.forEach(function(c) { %>
+  <main>
+    <table id="list">
+      <thead>
         <tr>
-          <td>
-            <%= c.court %>
-          </td>
-          <td>
-            <%= c.location %>
-          </td>
-          <td><a href="/courts/<%= c._id %>">Details</a></td>
+          <th>
+            <h3>Court</h3>
+          </th>
+          <th>
+            <h3>Location</h3>
+          </th>
+          <th>
+            <h3>Details</h3>
+          </th>
         </tr>
-        <% }); %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% courts.forEach(function(c) { %>
+          <tr>
+            <td>
+              <%= c.court %>
+            </td>
+            <td>
+              <%= c.location %>
+            </td>
+            <td><a href="/courts/<%= c._id %>">Details</a></td>
+          </tr>
+          <% }); %>
+      </tbody>
+    </table>
+    <br>
+  </main>
+  </body>
 
-  <%- include('../partials/footer') %>
+  </html>

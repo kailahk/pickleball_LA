@@ -1,22 +1,22 @@
 body {
-
   font-family: 'Roboto', sans-serif;
   color: #435F3F;
   display: grid;
   text-align: center;
-  grid-template-rows: 20vmin 80vmin;
+  grid-template-rows: 15vmin 80vmin 5vmin;
   grid-template-areas:
     "nav"
     "main"
+    "footer"
 }
 
 a {
   color: #435F3F;
 }
 
-.login img {
+.login>img {
   height: 30px;
-  margin-top: -3vmin
+  margin-top: -2vmin;
 }
 
 .logout>img {
@@ -26,13 +26,13 @@ a {
 
 .logout>p {
   margin: -1vmin 0 0 0;
-  font-size: 3vmin;
+  font-size: 2vmin;
 }
 
 .logout {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
 }
 
 nav {
@@ -40,12 +40,8 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 3vmin 3vmin 0 3vmin;
-  font-size: 4vmin;
-}
-
-.courtImg {
-  height: 80vh;
+  padding: 1.75vmin 3vmin 0 3vmin;
+  font-size: 3vmin;
 }
 
 h2 {
@@ -56,7 +52,16 @@ h2 {
 }
 
 h3 {
-  font-size: 5vmin;
+  font-size: 3vmin;
+  padding-top: 1vmin;
+}
+
+main {
+  padding: 0 10vmin;
+}
+
+.homepage {
+  padding: 0 0 0 0;
 }
 
 table,
@@ -82,7 +87,7 @@ thead {
 }
 
 header {
-  height: 770px;
+  height: 810px;
   width: 100%;
   text-align: center;
   padding-top: 125px;
@@ -105,7 +110,8 @@ header {
 }
 
 .strong {
-  font-size: 4vmin;
+  font-size: 3vmin;
+  font-weight: bold;
 }
 
 .underlined {
@@ -117,6 +123,7 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: flex-end;
 }
 
 #edit-review-form {
@@ -124,17 +131,25 @@ header {
 }
 
 #addReviewBtn,
-#deleteRev,
-#updateRevBtn,
-#addResBtn {
+#deleteRevBtn,
+#updateRevBtn {
   height: 4vmin;
   border-radius: 2vmin;
   margin-top: 3vmin;
+  font-size: 1.6vmin;
+  border: solid 0.25vmin #AFB1AE;
+  background-color: #CEDEC6;
+  color: #435F3F;
 }
 
-#deleteRes {
+#deleteRes,
+#addResBtn {
   height: 4vmin;
   border-radius: 2vmin;
+  font-size: 1.6vmin;
+  border: solid 0.25vmin #AFB1AE;
+  background-color: #CEDEC6;
+  color: #435F3F;
 }
 
 .avatarImg {
@@ -144,4 +159,68 @@ header {
 
 .review-user {
   font-size: 1.25vmin;
+}
+
+input,
+textarea,
+select {
+  font-size: 2.25vmin;
+  border-radius: 1vmin;
+  padding: 0.5vmin;
+}
+
+#form {
+  display: grid;
+}
+
+main a {
+  border-radius: 2vmin;
+  border: solid 0.25vmin #AFB1AE;
+  background-color: #CEDEC6;
+  font-size: 1.6vmin;
+  text-decoration: none;
+  padding: .65vmin;
+}
+
+main a:hover {
+  border: solid 0.25vmin #CEDEC6;
+  background-color: #A8C49B;
+  color: #435F3F;
+}
+
+#addReviewBtn:hover,
+#deleteRevBtn:hover,
+#updateRevBtn:hover {
+  border: solid 0.25vmin #CEDEC6;
+  background-color: #A8C49B;
+  color: #435F3F;
+}
+
+#deleteRes:hover,
+#addResBtn:hover {
+  border: solid 0.25vmin #CEDEC6;
+  background-color: #A8C49B;
+  color: #435F3F;
+}
+
+#footerPickleballLogo,
+#footerGithubLogo {
+  height: 3vmin;
+  width: 3vmin;
+}
+
+#footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  padding: 0.7vmin;
+  font-family: 'Roboto', sans-serif;
+  color: #435F3F;
+}
+
+h6 {
+  margin-top: 0.75vmin;
+  font-size: 1.5vmin;
 }

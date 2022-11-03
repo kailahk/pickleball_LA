@@ -17,6 +17,7 @@ function newReservation(req, res) {
 }
 
 function create(req, res) {
+  req.body.date += 'T00:00';
   req.body.user = req.user._id
   Reservation.create(req.body, function (err) {
     res.redirect('/reservations/index');
