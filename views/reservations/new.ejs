@@ -1,28 +1,27 @@
 <%- include('../partials/header') %>
 
-<h2>New Reservation</h2>
-<form id="add-reservation-form" method="POST"
-  action="/reservations">
-  <label>Court:
-    <select name="court" type="text">
-        <%- courts.map(c => 
-      `<option value="${c._id}">${c.court} - ${c.location}</option>`
-    ).join('') %>
-    </select>
-  </label>
-  <br><br>
-  <label>Date & Time:
-    <input type="date" name="date" min="<%= new Date().toJSON().slice(0,10) %>">
-    &nbsp;&nbsp;
-    <select name="time">
+  <h2>New Reservation</h2>
+  <form id="add-reservation-form" method="POST" action="/reservations">
+    <label>Court:
+      <select name="court" type="text">
+        <%- courts.map(c=>
+          `<option value="${c._id}">${c.court} - ${c.location}</option>`
+          ).join('') %>
+      </select>
+    </label>
+    <br><br>
+    <label>Date & Time:
+      <input type="date" name="date" min="<%= new Date().toJSON().slice(0,10) %>">
+      &nbsp;&nbsp;
+      <select name="time">
         <% validInputs.forEach(function(time, idx) { %>
-            <option value="<%= time %>" <%= idx === 0 ? 'selected' : ''%>>
-                <%= time %>
-            </option>
+          <option value="<%= time %>" <%=idx===0 ? 'selected' : '' %>>
+            <%= time %>
+          </option>
           <% }) %>
-    </select>
-  </label><br><br>
-  <input type="submit" value="Add Reservation" id="addResBtn">
-</form>
+      </select>
+    </label><br><br>
+    <input type="submit" value="Add Reservation" id="addResBtn">
+  </form>
 
-<%- include('../partials/footer') %>
+  <%- include('../partials/footer') %>

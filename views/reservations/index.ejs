@@ -1,43 +1,56 @@
 <%- include('../partials/header') %>
 
-<h2>Reservations</h2>
+  <h2>Reservations</h2>
 
-<% if (reservations.length) { %>
+  <% if (reservations.length) { %>
     <table>
-        <thead>
+      <thead>
+        <tr>
+          <th>
+            <h3>Court</h3>
+          </th>
+          <th>
+            <h3>Date</h3>
+          </th>
+          <th>
+            <h3>Time</h3>
+          </th>
+          <th>
+            <h3>Delete</h3>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% reservations.forEach(function(r) { %>
           <tr>
-            <th><h3>Court</h3></th>
-            <th><h3>Date</h3></th>
-            <th><h3>Time</h3></th>
-            <th><h3>Delete</h3></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% reservations.forEach(function(r) { %>
-            <tr>
-              <td><%= r.court.court %> - <%= r.court.location %></td>
-              <td><% let date = r.date %>
-                  <% let dateStrg = date.toDateString() %>
+            <td>
+              <%= r.court.court %> - <%= r.court.location %>
+            </td>
+            <td>
+              <% let date=r.date %>
+                <% let dateStrg=date.toDateString() %>
                   <%= dateStrg %>
-              </td>
-              <td><%= r.time %></td>
-              <td>
-                <% if (user?._id.equals(r.user)) { %>
-                  <form action="/reservations/<%= r._id %>?_method=DELETE" method="POST">
-                    <button id="deleteRes" type="submit">Delete</button>
-                  </form>
+            </td>
+            <td>
+              <%= r.time %>
+            </td>
+            <td>
+              <% if (user?._id.equals(r.user)) { %>
+                <form action="/reservations/<%= r._id %>?_method=DELETE" method="POST">
+                  <button id="deleteRes" type="submit">Delete</button>
+                </form>
                 <% } %>
-              </td>
-            </tr>
+            </td>
+          </tr>
           <% }); %>
-        </tbody>
-      </table>
-  <% } else { %>
-    <h5>No Reservations Yet</h5>
-  <% } %>
-  <br><br>
-  <a href="/reservations/new">Add New Reservation</a>
-  </input>
-  <br><br>
+      </tbody>
+    </table>
+    <% } else { %>
+      <h5>No Reservations Yet</h5>
+      <% } %>
+        <br><br>
+        <a href="/reservations/new">Add New Reservation</a>
+        </input>
+        <br><br>
 
-<%- include('../partials/footer') %>
+        <%- include('../partials/footer') %>

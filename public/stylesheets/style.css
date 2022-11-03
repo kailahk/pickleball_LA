@@ -5,7 +5,7 @@ body {
   display: grid;
   text-align: center;
   grid-template-rows: 20vmin 80vmin;
-  grid-template-areas: 
+  grid-template-areas:
     "nav"
     "main"
 }
@@ -19,12 +19,12 @@ a {
   margin-top: -3vmin
 }
 
-.logout > img {
+.logout>img {
   height: 6vmin;
   width: 6vmin;
 }
 
-.logout > p {
+.logout>p {
   margin: -1vmin 0 0 0;
   font-size: 3vmin;
 }
@@ -59,7 +59,10 @@ h3 {
   font-size: 5vmin;
 }
 
-table, tr, tbody, td {
+table,
+tr,
+tbody,
+td {
   border: 0.25vmin solid #435F3F;
   margin: 3vmin auto 0 auto;
   padding: 1.5vmin;
@@ -85,9 +88,12 @@ header {
   padding-top: 125px;
   color: white;
   overflow: hidden;
-  background: #A1BBE8;  /* fallback for old browsers */
-  background: linear-gradient(rgb(169,196,155,0.8), rgb(161,187,232,0.8)), url("https://i.imgur.com/74mNwIa.jpg");  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(rgb(168, 196, 155,0.8), rgb(161,187,232,0.8)), url("https://i.imgur.com/74mNwIa.jpg"); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #A1BBE8;
+  /* fallback for old browsers */
+  background: linear-gradient(rgb(169, 196, 155, 0.8), rgb(161, 187, 232, 0.8)), url("https://i.imgur.com/74mNwIa.jpg");
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(rgb(168, 196, 155, 0.8), rgb(161, 187, 232, 0.8)), url("https://i.imgur.com/74mNwIa.jpg");
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -106,7 +112,8 @@ header {
   text-decoration: underline solid;
 }
 
-#add-review-form, #edit-review-form {
+#add-review-form,
+#edit-review-form {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -116,7 +123,10 @@ header {
   margin-top: 6vmin;
 }
 
-#addReviewBtn, #deleteRev, #updateRevBtn, #addResBtn {
+#addReviewBtn,
+#deleteRev,
+#updateRevBtn,
+#addResBtn {
   height: 4vmin;
   border-radius: 2vmin;
   margin-top: 3vmin;
