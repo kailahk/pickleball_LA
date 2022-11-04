@@ -28,4 +28,3 @@
 * AAU, when I click submit on the 'add a reservation' page, I want the combination of the date, time, and court I reserved to disapear as an option for all users making subsequent reservations to avoid double-booking.
 * AAU, when I click on the 'add a review' form, I want my review to be added to the list of reviews on the details page for the associated court so that I can view my reservations and the court details simultaneously.
 * AAU, when I view the details page to add a review of a specific court, I want to be able to upload photos along with my review to help inform others' decisions about where to play.
-* AAU, I want to see the custom favicon on all pages
