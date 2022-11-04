@@ -162,11 +162,18 @@ header {
 }
 
 input,
-textarea,
 select {
   font-size: 2.25vmin;
   border-radius: 1vmin;
   padding: 0.5vmin;
+}
+
+textarea {
+  font-size: 2.25vmin;
+  border-radius: 1vmin;
+  padding: 0.5vmin;
+  height: 15vmin;
+  width: 30vmin;
 }
 
 #form {
